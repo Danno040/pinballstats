@@ -1,5 +1,5 @@
 class League < ActiveRecord::Base
-	has_many :league_nights, order: "week_number asc"
+	has_many :league_nights, -> { order "week_number asc" }
 
 	def players
 		if uses_groups?
